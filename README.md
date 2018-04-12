@@ -2,23 +2,31 @@
 
 从ecmwf下载数据的工具
 http://apps.ecmwf.int/datasets/data/interim-full-daily/levtype=sfc/
+
 1.如果您没有帐户，请通过
 https://apps.ecmwf.int/registration/
 进行自我注册，然后转到以下步骤。
+
 2.登录
 https://apps.ecmwf.int/auth/login/
 
 3.通过
 https://api.ecmwf.int/v1/key/  
 获取密钥 
+
 ```
 请注意，该密钥在1年内到期。您将在到期日期前1个月收到注册电子邮件地址的电子邮件，并附上续订说明。要查看当前密钥登录的到期日期，请访问
 https://www.ecmwf.int
 ```
+
 复制此页面中的信息，并将其粘贴到文件 
+
 $ HOME / .ecmwfapirc（Unix / Linux）
+
 或
+
 ％USERPROFILE％\ .ecmwfapirc（Windows)
+
 .ecmwfapirc中的内容：
 ```json
 {
@@ -39,6 +47,7 @@ pip install https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-
 
 ```
 要查看ECMWF Public Datasets的可用性，请访问Web界面：
+
 http://apps.ecmwf.int/datasets/
 
 下载文件的参数说明:
