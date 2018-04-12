@@ -11,20 +11,17 @@ https://apps.ecmwf.int/registration/
 https://apps.ecmwf.int/auth/login/
 
 3.通过
-https://api.ecmwf.int/v1/key/  
-获取密钥 
+https://api.ecmwf.int/v1/key/ 获取密钥 
 
-```
-请注意，该密钥在1年内到期。您将在到期日期前1个月收到注册电子邮件地址的电子邮件，并附上续订说明。要查看当前密钥登录的到期日期，请访问
-https://www.ecmwf.int
-```
+    请注意，该密钥在1年内到期。
+    您将在到期日期前1个月收到注册电子邮件地址的电子邮件，并附上续订说明。
+    要查看当前密钥登录的到期日期，请访问
+    https://www.ecmwf.int
 
 复制此页面中的信息，并将其粘贴到文件 
 
 $ HOME / .ecmwfapirc（Unix / Linux）
-
 或
-
 ％USERPROFILE％\ .ecmwfapirc（Windows)
 
 .ecmwfapirc中的内容：
