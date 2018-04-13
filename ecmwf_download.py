@@ -24,7 +24,7 @@ def downloadYear(syear = 1997,eyear = 1998):
             server = ECMWFDataServer()  
             server.retrieve({
                 'stream'    : "oper",
-                'area'      : "2/24/104/122", #下载区域
+                'area'      : "24/104/2/122", #下载区域，纬度/经度/纬度/经度
                 'levtype'   : "sfc",
                 'param'     : "165.128/166.128", #下载内容对应编号
                 'dataset'   : "interim",  #数据集
@@ -44,22 +44,23 @@ def testDownload():
     server = ECMWFDataServer()
     server.retrieve({
                 'stream'    : "oper",
-                'area'      : "2/24/104/122", #下载区域
+                'area'      : "24/104/2/122", #下载区域,纬度/经度/纬度/经度
                 'levtype'   : "sfc",
                 'param'     : "165.128/166.128", #下载内容对应编号
                 'dataset'   : "interim",  #数据集
                 'step'      : "0",             #步长
                 'grid'      : "0.25/0.25",     #分辨率
                 'time'      : "00:00:00/06:00:00/12:00:00/18:00:00",   #时间0点/6点/12点/18点
-                'date'      : "1979-02-01/to/1979-02-28",            #下载日期范围例如1996-01-01/to/2009-12-31
+                'date'      : "1979-01-01/to/2017-12-31",            #下载日期范围例如1996-01-01/to/2009-12-31
                 'type'      : "an",            #再分析数据
                 'class'     : "ei",       
                 'format'    : "netcdf",        #格式
-                'target'    : "output"  #输出位置（左斜线）及文件名
+                'target'    : "out/1979_2017.nc"  #输出位置（左斜线）及文件名
             })
 def main():
+    # downloadYear()
     testDownload()
-    # 1979-02-01/to/1979-02-28
+    # 1979-02-01_1979-02-28
 
 if __name__ == '__main__':
     main()
