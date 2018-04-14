@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 import linecache
 from ecmwfapi import ECMWFDataServer
-def downloadYear(syear = 1997,eyear = 1998):
+def downloadYear(syear = 2017,eyear = 2018):
     a=linecache.getlines("month.txt")
     for i in range(syear,eyear):#年份1996-2009
         if i%4==0:
@@ -24,7 +24,7 @@ def downloadYear(syear = 1997,eyear = 1998):
             server = ECMWFDataServer()  
             server.retrieve({
                 'stream'    : "oper",
-                'area'      : "24/104/2/122", #下载区域，纬度/经度/纬度/经度
+                'area'      : "24/104/2/122", #下载区域
                 'levtype'   : "sfc",
                 'param'     : "165.128/166.128", #下载内容对应编号
                 'dataset'   : "interim",  #数据集
@@ -44,7 +44,7 @@ def testDownload():
     server = ECMWFDataServer()
     server.retrieve({
                 'stream'    : "oper",
-                'area'      : "24/104/2/122", #下载区域,纬度/经度/纬度/经度
+                'area'      : "24/104/2/122", #下载区域
                 'levtype'   : "sfc",
                 'param'     : "165.128/166.128", #下载内容对应编号
                 'dataset'   : "interim",  #数据集
@@ -58,8 +58,8 @@ def testDownload():
                 'target'    : "out/1979_2017.nc"  #输出位置（左斜线）及文件名
             })
 def main():
-    # downloadYear()
-    testDownload()
+    downloadYear()
+    # testDownload()
     # 1979-02-01_1979-02-28
 
 if __name__ == '__main__':
